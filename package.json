@@ -1,23 +1,23 @@
+
 {
-  "name": "dbms_final-project",
+  "name": "custom-cake-ordering-system",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sweet Layers Custom Cake Ordering System",
   "homepage": "https://github.com/dekay157/custom-cake-ordering-system#readme",
-  "bugs": {
-    "url": "https://github.com/dekay157/custom-cake-ordering-system/issues"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dekay157/custom-cake-ordering-system.git"
+    "url": "https://github.com/dekay157/custom-cake-ordering-system.git"
   },
   "license": "ISC",
-  "author": "",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "dependencies": {
-    "express": "^5.3.0"
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "multer": "^2.5.0",
+    "mysql2": "^3.24.6"
   }
 }

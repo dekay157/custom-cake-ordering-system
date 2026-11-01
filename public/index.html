@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Layers | Cake Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <!-- Updated Sweet Layers Logo -->
+        <div class="brand">
+            <div class="brand-logo">🎂</div>
+            <div>
+                <h2>Sweet Layers</h2>
+                <p class="subtitle">CAKE ORDERING SYSTEM</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#designs">Cake Designs</a>
+            <a href="#flavors">Flavors</a>
+            <a href="#sizes">Sizes</a>
+        </nav>
+
+
+    </aside>
+
+    <main class="main-content">
+
+        <!-- Header -->
+        <header>
+            <div>
+                <h1>Welcome to Sweet Layers!</h1>
+                <p>Manage your cake designs, flavors, and sizes.</p>
+            </div>
+
+            <span class="admin">Administrator</span>
+        </header>
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="dashboard-section">
+
+            <div class="dashboard-heading">
+                <div>
+                    <p class="dashboard-label">SWEET LAYERS OVERVIEW</p>
+                    <h2>Dashboard Overview</h2>
+                    <p>Here's what's happening in your cake studio!</p>
+                </div>
+
+                <div class="dashboard-decoration">🧁</div>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat-card design-card">
+                    <div class="stat-icon">🎂</div>
+                    <p>Cake Designs</p>
+                    <h2 id="designCount">0</h2>
+                    <small>Your cake creations</small>
+                </div>
+
+                <div class="stat-card flavor-card">
+                    <div class="stat-icon">🍓</div>
+                    <p>Flavors</p>
+                    <h2 id="flavorCount">0</h2>
+                    <small>Delicious choices</small>
+                </div>
+
+                <div class="stat-card size-card">
+                    <div class="stat-icon">🍰</div>
+                    <p>Cake Sizes</p>
+                    <h2 id="sizeCount">0</h2>
+                    <small>Available sizes</small>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Cake Design Management -->
+        <section id="designs" class="panel">
+
+            <h2>Cake Design Management</h2>
+
+            <form id="designForm">
+
+                <input type="hidden" id="designId">
+
+                <input
+                    type="text"
+                    id="designName"
+                    placeholder="Cake design name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="designImage"
+                    placeholder="Image filename (e.g. floral.jpg)"
+                >
+
+                <!-- Cake Design Attributes -->
+
+                <select id="designColor" required>
+                    <option value="">Select Color</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Blue">Blue</option>
+                    <option value="White">White</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Red">Red</option>
+                    <option value="Purple">Purple</option>
+                    <option value="Green">Green</option>
+                    <option value="Black">Black</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Mixed Colors">Mixed Colors</option>
+                </select>
+
+                <select id="designPattern" required>
+                    <option value="">Select Pattern</option>
+                    <option value="Plain">Plain</option>
+                    <option value="Floral">Floral</option>
+                    <option value="Stripes">Stripes</option>
+                    <option value="Dots">Dots</option>
+                    <option value="Geometric">Geometric</option>
+                    <option value="Swirls">Swirls</option>
+                    <option value="Waves">Waves</option>
+                    <option value="Hearts">Hearts</option>
+                </select>
+
+                <select id="designTexture" required>
+                    <option value="">Select Texture</option>
+                    <option value="Smooth">Smooth</option>
+                    <option value="Rough">Rough</option>
+                    <option value="Ruffled">Ruffled</option>
+                    <option value="Textured Frosting">Textured Frosting</option>
+                </select>
+
+                <select id="designShape" required>
+                    <option value="">Select Shape</option>
+                    <option value="Round">Round</option>
+                    <option value="Square">Square</option>
+                    <option value="Rectangle">Rectangle</option>
+                    <option value="Heart-shaped">Heart-shaped</option>
+                    <option value="Number-shaped">Number-shaped</option>
+                    <option value="Custom Shape">Custom Shape</option>
+                </select>
+
+                <select id="designIcingType" required>
+                    <option value="">Select Icing Type</option>
+                    <option value="Buttercream">Buttercream</option>
+                    <option value="Fondant">Fondant</option>
+                    <option value="Whipped Cream">Whipped Cream</option>
+                    <option value="Cream Cheese">Cream Cheese</option>
+                    <option value="Royal Icing">Royal Icing</option>
+                </select>
+
+                <input
+                    type="number"
+                    id="designPrice"
+                    min="0"
+                    step="0.01"
+                    placeholder="Base price"
+                    required
+                >
+
+                <button type="submit">Save Cake Design</button>
+
+            </form>
+
+            <div id="designList" class="record-list"></div>
+
+        </section>
+
+        <!-- Flavor Management -->
+        <section id="flavors" class="panel">
+
+            <h2>Flavor Management</h2>
+
+            <form id="flavorForm">
+
+                <input type="hidden" id="flavorId">
+
+                <input
+                    type="text"
+                    id="flavorName"
+                    placeholder="Flavor name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="flavorImage"
+                    placeholder="Image filename (e.g. vanilla.jpg)"
+                >
+
+                <input
+                    type="number"
+                    id="flavorPrice"
+                    min="0"
+                    step="0.01"
+                    placeholder="Additional price"
+                    required
+                >
+
+                <button type="submit">Save Flavor</button>
+
+            </form>
+
+            <div id="flavorList" class="record-list"></div>
+
+        </section>
+
+        <!-- Size Management -->
+        <section id="sizes" class="panel">
+
+            <h2>Size Management</h2>
+
+            <form id="sizeForm">
+
+                <input type="hidden" id="sizeId">
+
+                <input
+                    type="text"
+                    id="sizeName"
+                    placeholder="Size name"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="sizePrice"
+                    min="0"
+                    step="0.01"
+                    placeholder="Size price"
+                    required
+                >
+
+                <button type="submit">Save Size</button>
+
+            </form>
+
+            <div id="sizeList" class="record-list"></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
