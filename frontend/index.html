@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions Management System</title>
+</head>
+<body>
+
+    <header>
+        <h1>Custom Cake Ordering System</h1>
+        <h2>Transactions Management</h2>
+    </header>
+
+    <nav>
+        <a href="#orders">Custom Orders</a>
+        <a href="#order-details">Order Details</a>
+        <a href="#payments">Payments</a>
+    </nav>
+
+    <main>
+
+        <!-- CUSTOM ORDERS -->
+        <section id="orders">
+            <h2>Custom Orders</h2>
+
+            <h3>Add New Order</h3>
+
+            <form id="order-form">
+
+                <label for="customer_id">Customer ID:</label>
+                <input type="number" id="customer_id" name="customer_id" required>
+
+                <br><br>
+
+                <label for="employee_id">Employee ID:</label>
+                <input type="number" id="employee_id" name="employee_id" required>
+
+                <br><br>
+
+                <label for="delivery_date">Delivery Date:</label>
+                <input type="datetime-local" id="delivery_date" name="delivery_date">
+
+                <br><br>
+
+                <label for="status">Order Status:</label>
+                <select id="status" name="status">
+                    <option value="Pending">Pending</option>
+                    <option value="Processing">Processing</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+
+                <br><br>
+
+                <button type="submit">Save Order</button>
+
+            </form>
+
+            <h3>Order Records</h3>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer ID</th>
+                        <th>Employee ID</th>
+                        <th>Order Date</th>
+                        <th>Delivery Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="orders-table">
+                    <!-- Order records will appear here -->
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- ORDER DETAILS -->
+        <section id="order-details">
+            <h2>Order Details</h2>
+
+            <h3>Add Order Details</h3>
+
+            <form id="details-form">
+
+                <label for="order_id">Order ID:</label>
+                <input type="number" id="order_id" name="order_id" required>
+
+                <br><br>
+
+                <label for="design_id">Cake Design ID:</label>
+                <input type="number" id="design_id" name="design_id" required>
+
+                <br><br>
+
+                <label for="flavor_id">Flavor ID:</label>
+                <input type="number" id="flavor_id" name="flavor_id" required>
+
+                <br><br>
+
+                <label for="size_id">Size ID:</label>
+                <input type="number" id="size_id" name="size_id" required>
+
+                <br><br>
+
+                <label for="message_on_cake">Message on Cake:</label>
+                <input type="text" id="message_on_cake"
+                       name="message_on_cake">
+
+                <br><br>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity"
+                       min="1" required>
+
+                <br><br>
+
+                <button type="submit">Save Order Details</button>
+
+            </form>
+
+            <h3>Order Detail Records</h3>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Detail ID</th>
+                        <th>Order ID</th>
+                        <th>Design ID</th>
+                        <th>Flavor ID</th>
+                        <th>Size ID</th>
+                        <th>Cake Message</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <link rel="stylesheet" href="style.css">
+
+                <tbody id="details-table">
+                    <!-- Order details will appear here -->
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- PAYMENTS -->
+        <section id="payments">
+            <h2>Payments</h2>
+
+            <h3>Record Payment</h3>
+
+            <form id="payment-form">
+
+                <label for="payment_order_id">Order ID:</label>
+                <input type="number" id="payment_order_id"
+                       name="order_id" required>
+
+                <br><br>
+
+                <label for="total_amount">Total Amount:</label>
+                <input type="number" id="total_amount"
+                       name="total_amount" min="0"
+                       step="0.01" required>
+
+                <br><br>
+
+                <label for="method">Payment Method:</label>
+                <select id="method" name="method" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="Cash">Cash</option>
+                    <option value="GCash">GCash</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                </select>
+
+                <br><br>
+
+                <label for="downpayment">Downpayment:</label>
+                <input type="number" id="downpayment"
+                       name="downpayment" min="0"
+                       step="0.01" value="0.00">
+
+                <br><br>
+
+                <button type="submit">Save Payment</button>
+
+            </form>
+
+            <h3>Payment Records</h3>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Order ID</th>
+                        <th>Total Amount</th>
+                        <th>Payment Method</th>
+                        <th>Downpayment</th>
+                        <th>Payment Date</th>
+                    </tr>
+                </thead>
+
+                <tbody id="payments-table">
+                    <!-- Payment records will appear here -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Custom Cake Ordering System - Transactions Module</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>
